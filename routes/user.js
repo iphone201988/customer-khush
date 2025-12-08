@@ -1,0 +1,14 @@
+import express from "express";
+import { validation } from "../middleware/validation.js";
+import { registerUserSchema,loginUserSchema,verifyOtpSchema,forgetPasswordSchema,resetPasswordSchema } from "../schema/user.schema.js";
+import { forgetPassword, loginUser, registerUser, resetPassword, verifyOtp } from "../controllers/user.js";
+
+const userRouter = express.Router()
+
+userRouter.post('/registerUser',validation(registerUserSchema),registerUser)
+userRouter.get('/loginUser',validation(loginUserSchema),loginUser)
+userRouter.post('/forgetPassword',validation(forgetPasswordSchema),forgetPassword)
+userRouter.post('/verifyOtp',validation(verifyOtpSchema),verifyOtp)
+userRouter.post('/resetPassword',validation(resetPasswordSchema),resetPassword)
+
+export default userRouter
