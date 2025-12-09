@@ -23,8 +23,8 @@ export const registerUserSchema = Joi.object({
     "any.required": "Password is required",
   }),
 
-  role: Joi.string().valid("Admin", "User", "Driver").required().messages({
-    "any.only": "Role must be Admin, User, or Driver",
+  role: Joi.string().valid("Customer", "Driver").required().messages({
+    "any.only": "Role must be Customer or Driver",
     "string.empty": "Role is required",
     "any.required": "Role is required",
   }),

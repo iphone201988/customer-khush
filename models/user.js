@@ -20,6 +20,9 @@ const userSchema = new Schema(
       enum: ["Customer", "Driver"],
       default: "Driver",
     },
+    profilePhoto:{
+      type:String
+    },
     otpForVerify: {
       type: String,
     },
@@ -34,7 +37,8 @@ const userSchema = new Schema(
     },
     verifyFor:{
       type:String,
-      enum:["forRegister","forForgetPassword"]
+      enum:["forRegister","forForgetPassword"],
+      default:"forRegister"
     }
   },
   { timestamps: true }

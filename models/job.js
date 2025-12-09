@@ -33,6 +33,17 @@ const jobSchema = new Schema({
         type:String,
         enum:["available","unavailable"],
         default:"available"
+    },
+    taskStatus:{
+        type:String,
+        enum:["inprogress","completed"],
+        default:"inprogress"
+    },
+    taskImage:{
+        type:String
+    },
+    isDeleted:{
+        type:Boolean
     }
 },{timestamps:true})
 
